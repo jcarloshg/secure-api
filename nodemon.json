@@ -1,0 +1,10 @@
+{
+    "watch": [
+        "src"
+    ],
+    "ext": "ts,json",
+    "ignore": [
+        "src/application/shared/infra/services/circuit-breaker-counter.json",
+        "src/application/secure-inquiry/infraestructure/persist-file/db.json"
+    ]
+}

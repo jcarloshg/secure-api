@@ -58,16 +58,17 @@ export class PersistFileDB {
         writeFileSync(this.DB_PATH, JSON.stringify(entries, null, 2), 'utf8');
     }
 
-    static saveLogEntry({ originalContent, redactedContent }: { originalContent: any, redactedContent: any }) {
+    static saveLogEntry(logEntryForSave: LogEntryForSave) {
         const uuid = randomUUID();
         const timestamp = new Date().toISOString();
-        const originalString = JSON.stringify(originalContent);
+        const originalString = JSON.stringify(logEntryForSave['original-content']);
         const encrypted = this.encrypt(originalString);
         const entry = {
             uuid,
             timestamp,
-            'redacted-content': redactedContent,
+            'redacted-content': logEntryForSave['redacted-content'],
             'original-content': encrypted,
+            'ai-response': logEntryForSave['ai-response'],
         };
         const db = this.loadDB();
         db.push(entry);
@@ -78,4 +79,18 @@ export class PersistFileDB {
     static decryptOriginalContent(encrypted: { ciphertext: string, iv: string, tag: string }) {
         return JSON.parse(this.decrypt(encrypted));
     }
+}
+
+export interface LogEntry {
+    uuid: string,
+    timestamp: string,
+    'redacted-content': string,
+    'original-content': string,
+    'ai-response': string,
+}
+
+export interface LogEntryForSave {
+    'redacted-content': any,
+    'original-content': any,
+    'ai-response': any,
 }

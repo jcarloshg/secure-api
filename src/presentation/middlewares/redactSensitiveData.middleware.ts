@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { PersistFileDB } from '../../application/secure-inquiry/infraestructure/persist-file/persist-file.db';
+// import { PersistFileDB } from '../../application/secure-inquiry/infraestructure/persist-file/persist-file.db';
 
 /**
  * Middleware to redact sensitive information (emails, credit cards, SSNs) from request bodies.
@@ -15,15 +15,10 @@ export function redactSensitiveData(req: Request, res: Response, next: NextFunct
         const redactedContent = deepRedact(req.body);
 
         // Replace request body with redacted version
-        req.body = redactedContent;
-
-        try {
-            // Save both original and redacted content on db
-            PersistFileDB.saveLogEntry({ originalContent, redactedContent });
-        } catch (err) {
-            // Optionally log error, but do not block request
-            // console.error('Failed to save log entry:', err);
-        }
+        req.body = {
+            redactedContent,
+            originalContent
+        };
     }
     next();
 }
