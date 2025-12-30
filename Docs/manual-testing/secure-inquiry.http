@@ -1,0 +1,7 @@
+POST http://localhost:3000/secure-inquiry
+Content-Type: application/json
+
+{
+    "userId": "user123",
+    "message": "Hello"
+}
