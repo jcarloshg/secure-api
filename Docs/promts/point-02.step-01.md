@@ -1,6 +1,20 @@
-Step 1 (Sanitization): Use AI to generate a robust sanitizer that strips emails, credit cards, and SSNs (Social security Numbers or 9 numeric digits) from
-message and replaces them with
+# Information
+
+## step
+
+Step 1 (Sanitization): Use AI to generate a robust sanitizer that strips emails, credit cards, and SSNs (Social security Numbers or 9 numeric digits) from message and replaces them with
 <REDACTED: TYPE>.
+
+## Prompt 01
+
+0. Read the entire porject
+
+1. You are an expert BackEnd developer, you must sure the scalability of the architecture. Also you must sure the consistency and security of the data.
+2. create a middleware into the folder ´src/presentation/middlewares´; Use the entities of library of express
+3. The middleware must strip emails, credit cards, and SSNs (Social security Numbers or 9 numeric digits) 
+3.1 The middleware must replace them with <REDACTED: [emails | credit cards | SSNs]>
+
+## Information from AI Gemini
 
 As an AI and Architecture expert, I've broken down this task into its core technical requirements. This workflow is a classic **"PII Gateway"** pattern used to ensure data privacy before sending information to a Large Language Model (LLM).
 
