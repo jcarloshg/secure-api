@@ -18,7 +18,7 @@ This project is a secure API gateway designed to handle sensitive inquiries with
 ### Evidence
 
 <video src="Docs/media/video.webm" controls width="600">
-  Your browser does not support the video tag.
+  Your browser does not support the video tag.Your browser does not support the video tag.
 </video>
 
 ### Key Architectural Values
