@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
+import { simulateAICall } from "../../application/secure-inquiry/simulateAICall";
 
-export const secureInquiryController = (req: Request, res: Response, next: NextFunction) => {
+export const secureInquiryController = async (req: Request, res: Response, next: NextFunction) => {
     // Only accept JSON
     if (!req.is('application/json')) {
         return res.status(415).json({ error: 'Content-Type must be application/json' });
@@ -10,7 +11,9 @@ export const secureInquiryController = (req: Request, res: Response, next: NextF
     if (typeof userId !== 'string' || typeof message !== 'string' || !userId.trim() || !message.trim()) {
         return res.status(400).json({ error: 'Invalid input. userId and message are required strings.' });
     }
+    // Simulate external AI call (using the message as the redacted message for now)
+    const aiResponse = await simulateAICall(message);
     // Here you would handle the inquiry, e.g., save to DB, queue, etc.
     // For now, just return success
-    return res.status(201).json({ status: 'success', received: { userId, message } });
+    return res.status(201).json({ status: 'success', received: { userId, message }, aiResponse });
 }
