@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { simulateAICall } from "../../application/secure-inquiry/simulateAICall";
+import { simulateAICall } from "../../application/secure-inquiry/infraestructure/services/simulateAICall";
 
 export const secureInquiryController = async (req: Request, res: Response, next: NextFunction) => {
     // Only accept JSON
