@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import helmet from 'helmet';
 import { secureInquiryController } from './presentation/controllers/secure-inquiry.controller';
-import { redactSensitiveData } from './presentation/middlewares/redactSensitiveData';
+import { redactSensitiveData } from './presentation/middlewares/redactSensitiveData.middleware';
 const PORT = process.env.PORT || 3000;
 
 const app = express();

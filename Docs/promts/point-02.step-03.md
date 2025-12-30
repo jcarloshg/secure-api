@@ -37,4 +37,9 @@ In a production environment, never store your **Encryption Key** in the same fil
 3. add the logic into the file: 
     - create the logic into: src/application/secure-inquiry/infraestructure/persist-file/persist-file.db.ts
     - use this file as data base: src/application/secure-inquiry/infraestructure/persist-file/db.json
-4. add the implementation into the middleware :: src/presentation/middlewares/redactSensitiveData.ts
+4. I want to save the next strcuture:
+    - uuid: Unique identifier for the log entry.                 
+    - timestamp: Records exactly when the sanitization occurred.      
+    - redacted-content: Viewable by admins for general auditing.             
+    - original-content: Securely hidden PII (requires a secret key to read). 
+4. add the implementation into the middleware: src/presentation/middlewares/redactSensitiveData.ts

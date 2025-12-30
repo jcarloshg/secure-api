@@ -1,0 +1,15 @@
+[
+  {
+    "uuid": "2884fc72-6a7e-45c6-b5db-6fcca881b374",
+    "timestamp": "2025-12-30T03:26:46.171Z",
+    "redacted-content": {
+      "userId": "user123",
+      "message": "Hello"
+    },
+    "original-content": {
+      "ciphertext": "a4nqKoQNITo04XuJ2/iI56aMS8gs+EO9kabp6nSN+p0jyNij0zU=",
+      "iv": "1mR9LLxgHOguyPKe",
+      "tag": "+nF521DvfI/jFwxWN+M49g=="
+    }
+  }
+]
