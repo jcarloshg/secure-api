@@ -1,17 +1,17 @@
 services:
   backend:
     build:
-      context: ./back
+      context: .
       dockerfile: Dockerfile
     ports:
       - 3000:3000
     # volumes:
     #   - ./back/src:/app/src
-    environment:
-      - POSTGRES_URL=postgresql://admin:123456@db-sql:5432/data_base_name
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=123456
-      - POSTGRES_DB=data_base_name
+    # environment:
+    #   - POSTGRES_URL=postgresql://admin:123456@db-sql:5432/data_base_name
+    #   - POSTGRES_USER=admin
+    #   - POSTGRES_PASSWORD=123456
+    #   - POSTGRES_DB=data_base_name
     # depends_on:
     #   - db-sql
 
