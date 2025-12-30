@@ -11,15 +11,15 @@ A secure API gateway built with Express.js and TypeScript that handles sensitive
 5. [Testing](#testing)
 6. [Technologies](#technologies)
 
-## Architecture
-
-This project is a secure API gateway designed to handle sensitive inquiries with robust data protection and system resilience. The architecture follows a layered approach with clear separation of concerns:
-
 ### Evidence
 
 <video src="Docs/media/video.webm" controls width="600">
   Your browser does not support the video tag.Your browser does not support the video tag.
 </video>
+
+## Architecture
+
+This project is a secure API gateway designed to handle sensitive inquiries with robust data protection and system resilience. The architecture follows a layered approach with clear separation of concerns:
 
 ### Key Architectural Values
 
