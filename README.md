@@ -13,7 +13,7 @@ A secure API gateway built with Express.js and TypeScript that handles sensitive
 
 ### Evidence
 
-<video src="Docs/media/video.webm" controls width="600">
+<video src="Docs/media/video.mp4" controls width="100%" style="aspect-ratio: 16/9;">
   Your browser does not support the video tag.Your browser does not support the video tag.
 </video>
 
