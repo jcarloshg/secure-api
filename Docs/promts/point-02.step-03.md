@@ -5,8 +5,6 @@
 - **Redacted (Plaintext):** Stored for high-speed auditing, analytics, and debugging without needing decryption keys.
 - **Original (Encrypted):** Stored only for "break-glass" scenarios where the real data must be recovered.
 
-- **Mock Database Structure:** Using a JSON file is perfect for a mock setup. You should append each entry as an object in an array, ensuring you include a **timestamp** and a unique **ID** for traceability.
-
 ### Logical Data Structure
 
 Your JSON entry should look similar to this to meet architectural standards:
@@ -19,6 +17,8 @@ Your JSON entry should look similar to this to meet architectural standards:
 | **Original Content** | **Ciphertext** | Securely hidden PII (requires a secret key to read). |
 | **AI Response**      | Plaintext      | The output from Step 2.                              |
 
-### Expert Security Tip
+<!-- ### Expert Security Tip
 
-In a production environment, never store your **Encryption Key** in the same file or even the same server as the JSON log. Use a dedicated **Secret Manager** (like AWS KMS or HashiCorp Vault) to manage the keys used for the `original_message` encryption.
+In a production environment, never store your **Encryption Key** in the same file or even the same server as the JSON log. Use a dedicated **Secret Manager** (like AWS KMS or HashiCorp Vault) to manage the keys used for the `original_message` encryption. -->
+
+## Prompt 01
